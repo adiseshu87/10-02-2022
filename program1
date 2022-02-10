@@ -1,0 +1,25 @@
+#include <stdio.h>
+#include<ctype.h>
+#include<stdlib.h>
+int main()
+{
+   char a;
+   FILE *b;
+   b=fopen("std1.txt","w");
+   printf("enter the text.press cntrl Z:\n");
+   while((a = getchar())!=EOF)
+{
+      putc(a,b);
+   }
+   fclose(b);
+   b=fopen("std1.txt","r");
+   printf("text on the file:\n");
+   while ((a=getc(b))!=EOF){
+      if(a == ',')
+         printf("\t\t");
+      else
+         printf("%c",a);
+   }
+   fclose(b);
+   return 0;
+}
